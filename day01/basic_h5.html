@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>basic_h5</title>
+</head>
+<body>
+    <form action="login.action">
+        喜欢的颜色：<input type="color" name="color"><br>
+        出生日期：<input type="date" name="date1"><br>
+        日期时间 ：<input type="datetime-local" name="date2"><br>
+        月：<input type="month" name="month"><br>
+        周：<input type="week" name="week"><br>
+        时间：<input type="time" name="time"><br>
+        数值：<input type="number" min="1" max="160" step="5" name="number"><br>
+        调节按钮：<input type="range" name="column"><br>
+        手机：<input type="tel" id="tel" name="tel" pattern="\d{11}" required autofocus autocomplete="15679666896"><br>
+        <output for="tel"></output>
+        邮箱：<input type="email" name="email"><br>
+        url: <input type="url"><br>
+        搜索: <input type="search" list="list1" placeholder="请输入你喜欢的产品"><br>
+        <datalist id="list1">
+            <option>秋裤 男</option>
+            <option>上衣 女</option>
+            <option>夹克 男</option>
+        </datalist>
+        <input type="submit">
+    </form>
+</body>
+</html>

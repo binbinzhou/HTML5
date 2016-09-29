@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>meter与progress</title>
+    <script>
+        window.onload = function(){
+            var load = document.getElementById("loading");
+            //利用间歇调用实现对progress的value值的变化，
+            var play = setInterval(function () {
+                loading.value += 10;
+                console.log(loading.value);
+                if(loading.value>=150){
+                    clearInterval(play);
+                }
+            },500);
+        };
+    </script>
+</head>
+<body>
+    <p>定义已知范围内的度量，与刻度的意义相似</p>
+    <meter min="0" max="100" low="10" high="100" value="50" optimum="60"  ></meter>
+
+    <p>progress为任务定义完整的过程，通常progress元素表示一个任务从0到100%完成进度的情况 <br>
+        表示任务完成的进度，例如用进度标尺或者加载条的形式显示
+    </p>
+    <progress max="150" value="10" id="loading"></progress>
+
+</body>
+</html>

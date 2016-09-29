@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新添加的表单元素</title>
+</head>
+<body>
+    <form action="register.action">
+        颜色选择器：<input type="color"><br>
+        日期控件：<input type="date"><br>
+        当地日期时间：<input type="datetime-local"><br>
+        月份：<input type="month"><br>
+        星期：<input type="week"><br>
+        time：<input type="time"><br>
+        <hr>
+        数值框：<input type="number" min="0" max="100"><br>    <!--还可以设置每次点击上下变化浮动的幅度 step="3"-->
+        调节按钮：<input type="range"><br>
+        email地址：<input type="email"><br>
+        url地址：<input type="url"><br>
+
+        <!--
+            在点击提交的时候会识别下列情况：
+            1、如果数值框输入的数值不在范围内会提示数值！！！
+            2、邮箱地址会自动识别！！！
+            3、url地址也会自动识别，网址！！！
+         -->
+        <br><input type="submit">
+    </form>
+</body>
+</html>

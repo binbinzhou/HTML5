@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新标签</title>
+</head>
+<body>
+    <mark>标记文本，自带黄色背景颜色</mark>
+    <br>
+    <time>一个专门包含时间的标签，并没有什么特别：2016-09-29</time>
+
+    <p>作为快速选项的数据项，利用到input中type为search、placeholder设置默认值，默认值始终是灰色隐形的、datalist设置数据项</p>
+    搜索：<input type="search" name="search" list="clother" placeholder="请输入你喜欢的产品">
+    <datalist id="clother">
+        <option>上衣</option>
+        <option>牛仔裤</option>
+        <option>衬衫</option>
+        <option>运动鞋</option>
+    </datalist>
+
+    <p>details元素用于显示细节信息，例如工具提示，向用户显示的区域等，一般与summary一起用</p>
+    <details>   <!--默认为关闭状态，若添加属性open="open"则默认打开-->
+        <summary>显示内容</summary>
+        <dt>标题</dt>
+        <dd>内容1</dd>
+        <dd>内容2</dd>
+        <dd>内容3</dd>
+    </details>
+
+</body>
+</html>
