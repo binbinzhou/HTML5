@@ -1,0 +1,508 @@
+/*-------------------------------首页----------------------------------------*/
+/*头部开始*/
+header>div{
+    background: url("../images/bg1.png") repeat-x;
+}
+.header{
+    width: 1090px;
+    margin:0 auto;
+    overflow: hidden;
+}
+.header .logo{
+    overflow: hidden;
+    float: left;
+}
+.header .logo a{
+    display: block;
+    width: 338px;
+    height:49px;
+    margin: 14px 0;
+    background: url("../images/logo.png") no-repeat;
+}
+.header .header_right{
+    float: right;
+}
+.header_right .search{
+    float: left;
+    width: 404px;
+    height:42px;
+    margin: 16px 0;
+    border-radius: 25px;
+    border: 1px solid #cccccc;
+    background-color: white;
+}
+.header_right .search>a{
+    display: inline-block;
+    margin: 13px 9px 0 20px;
+}
+.header_right .search>span{
+    display: inline-block;
+    width: 12px;
+    height:10px;
+    background: url("../images/down_jt.png") no-repeat ;
+}
+.header_right .search input{
+    border: none;
+    margin-left: 5px;
+    width: 250px;
+    height:25px;
+    padding: 5px 0px 5px 10px;
+    font-size: 14px;
+    border-left: 1px solid #ccc;
+}
+.header_right .sub_icons{
+    margin: 24px 15px;
+    float: left;
+}
+.header_right .sub_icons .search_icon{
+    float: left;
+    margin-right:15px;
+    width: 24px;
+    height: 24px;
+    background: url("../images/search.png") no-repeat;
+}
+.header_right .sub_icons .login{
+    width: 80px;
+    height:25px;
+    border: 1px solid #dadada;
+    float: left;
+}
+.header_right .sub_icons .login .user{
+    float: left;
+    width: 24px;
+    height: 24px;
+    border-right: 1px solid #dadada;
+    background: url("../images/user.png") no-repeat;
+}
+.header_right .sub_icons .login .login_icon{
+    padding:5px;
+    margin-left: 10px;
+    float: left;
+}
+/*头部结束*/
+/*导航开始*/
+nav>div{
+    background-color: #158687;
+}
+.menu_top{
+    width: 848px;
+    margin:0 auto;
+    overflow: hidden;
+}
+.menu_top li{
+    float: left;
+}
+.menu_top li a{
+    display: block;
+    font-size: 14px;
+    padding: 16px 25px;
+    color: #ffffff;
+}
+/*导航结束*/
+/*大图广告开始*/
+.ad_bg{
+    background-color: #d5eae5;
+}
+.ad{
+    width: 1280px;
+    margin:0 auto;
+}
+.ad a{
+    display: block;
+}
+/*大图广告结束*/
+/*中间内容区开始*/
+.wrapper{
+     background: url("../images/bg2_03.png") repeat-x;
+ }
+.wrapper_inner{
+    width: 1010px;
+    margin: 0 auto;
+    background-color: white;
+}
+.wrapper_inner>section{
+    padding-top: 26px;
+}
+/*上半部分*/
+.videos h1{
+    border-left: 12px solid #a5dacc;
+    border-bottom: 1px solid #cccccc;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 5px;
+    padding: 9px 0 9px 8px;
+}
+.videos h1 span{
+    font-size: 20px;
+    padding:0 8px;
+}
+.videos ul{
+    overflow: hidden;
+    padding-left:14px;
+}
+.videos ul li{
+    padding-top: 10px;
+    padding-right: 10px;
+    float: left;
+}
+.videos h1>a{
+    float: right;
+    padding-right: 24px;
+    color: #999999;
+}
+
+.content{
+    overflow: hidden;
+}
+/*下半部分的左半部分开始*/
+.content_left{
+    float: left;
+}
+.content_left>section{
+    padding-bottom: 26px;
+}
+.news{
+    width: 840px;
+}
+.news .news_desc li{
+    padding-bottom: 4px;
+}
+.news .news_desc li p{
+    padding: 2px 0;
+    font-size: 12px;
+    color: #424243;
+}
+.news .news_desc li p.playtimes{
+    color: #999999;
+}
+.news dl{
+    padding-left:10px;
+    overflow: hidden;
+}
+.news dl dd{
+    float: left;
+    color: #939393;
+
+}
+.news dl dd a{
+    padding:0 12px;
+    font-size: 18px;
+    color: #cccdcd;
+    font-weight: 600;
+}
+.news dl dd a.current{
+    color: #424243;
+}
+/*下半部分的右半部分开始*/
+.content_right{
+    margin-left: 840px;
+}
+.content_right .rank{
+    margin-bottom: 25px;
+}
+.content_right .rank h1{
+    margin-left: 15px;
+    border-bottom: 1px solid #a5dacc;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 9px 0 9px 0;
+}
+.content_right .rank ul .rank_top{
+    padding-top: 10px ;
+    padding-left: 20px;
+}
+.content_right .rank ul .ranks{
+    padding-top: 18px;
+    padding-left: 20px;
+}
+.content_right .rank ul .ranks span{
+    margin-right: 20px;
+    float: left;
+    width: 20px;
+    height:15px;
+    background-color: #cccccc;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+}
+
+/*底部信息开始*/
+footer{
+    background: url("../images/bg3.png") repeat-x;
+}
+footer .wrapper_inner2{
+    text-align: center;
+    width: 1010px;
+    margin: 0 auto;
+}
+footer ul{
+    overflow: hidden;
+    border: 1px solid #a5dacc;
+}
+footer ul li{
+    padding: 9px 18px;
+    float: left;
+}
+footer ul li select{
+    width: 145px;
+    height:22px;
+    border-left: 2px solid #787878;
+    border-top: 2px solid #787878;
+    color: #99999c;
+}
+footer .copyright{
+    margin-top: 46px;
+    padding-bottom: 35px;
+}
+/*-------------------------------列表页面----------------------------------------*/
+.banner{
+    overflow: hidden;
+}
+/*左边内容*/
+.banner .banner_left{
+    padding: 0 18px;
+    float: left;
+}
+.banner .banner_left section{
+    margin-bottom: 10px;
+}
+.banner .banner_left h1{
+    padding-bottom: 9px;
+    font-weight: bold;
+    border-bottom: 1px solid #424243;
+}
+.banner .banner_left h1 span{
+    padding-top: 6px;
+    padding-left: 5px;
+    display: block;
+    width: 37px;
+    border-top: 3px solid #0a6367;
+    font-size: 16px;
+}
+.banner .banner_left ul li{
+    width: 226px;
+    overflow: hidden;
+ }
+.banner .banner_left ul li.double{
+    margin-left:-5px;
+}
+.banner .banner_left ul li span{
+    float: left;
+    padding: 5px 10px 0 0;
+    color: #f48549;
+}
+.banner .banner_left .li_line{
+    padding:5px 0px;
+    border-bottom: 1px dashed #ddd;
+    overflow: hidden;
+}
+.banner .banner_left .li_line>a{
+    float: left;
+}
+.banner .banner_left .li_line>a.current{
+    color: #f48549;
+}
+.banner .banner_left .bn_desc{
+    float: left;
+}
+.banner .banner_left .bn_desc p{
+    color: #9f999c;
+    padding-left: 5px;
+    line-height: 16px;
+}
+.banner .banner_left .bn_desc p a{
+    color: #424243;
+}
+/*右边内容*/
+.banner .banner_right{
+    padding: 0 20px;
+    margin-left: 262px;
+}
+.banner .banner_right section{
+    margin-bottom: 10px;
+}
+.banner .banner_right h2{
+    padding:10px 0 8px 0;
+    border-bottom: 1px solid #424243;
+}
+.banner .banner_right h2 span{
+    padding-left: 5px;
+    font-size: 16px;
+}
+.news_desc{
+    overflow: hidden;
+    padding-left:14px;
+}
+.news_desc li{
+    padding: 11px 18px 4px 0;
+    float: left;
+}
+.banner_right .news_desc li p{
+    padding: 2px 0;
+    font-size: 12px;
+    color: #424243;
+}
+.banner_right .news_desc li p.playtimes{
+    color: #999999;
+}
+/*右边下部的翻页*/
+.banner_right nav span{
+    float: left;
+    padding:8px 0 0 50px;
+    color: #999999;
+}
+.banner_right nav ul{
+    float: left;
+}
+.banner_right nav ul li{
+    float: left;
+    border: 1px solid #cccccc;
+    margin: 9px 4px;
+}
+.banner_right nav ul li a{
+    padding:5px;
+    color: #999999;
+}
+.banner_right nav ul li a.target{
+    color: #000000;
+}
+.banner_right nav ul li input{
+    padding-left:5px;
+    width: 37px;
+    height:17px;
+    border: none;
+}
+/*-------------------------------内容页面----------------------------------------*/
+.column{
+    padding: 0 30px;
+}
+.main{
+    margin-bottom: 30px;
+}
+.main h1{
+    padding-left: 5px;
+}
+.main h2{
+    font-size: 18px;
+    color: #424243;
+    font-weight: bold;
+    padding: 30px 5px;
+}
+.movies{
+    -webkit-box-shadow:0 0 15px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    background-color: #303030;
+}
+.movies .movies_view{
+    width: 664px;
+    height:500px;
+    float: left;
+    background-color: #303030;
+    border-right: 5px solid #3d3d3d;
+}
+/*视频播放右边内容*/
+.movies .movies_right{
+    margin-left: 669px;
+    background-color: #303030;
+    border-left: 1px solid #2a2a29;
+
+}
+.movies .movies_right>p{
+    font-size: 16px;
+    color: #ffffff;
+    padding: 16px 0 4px 20px;
+}
+.movies .movies_right h3{
+    color: #999999;
+    padding: 0 0 21px 22px;
+}
+.movies .movies_right ul{
+    height:412px;
+    padding: 5px 10px 5px 5px;
+    border-right:20px solid #f4f4f4;
+    background-color: #3f3f3f;
+}
+.movies .movies_right ul li{
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+.movies .movies_right ul li.last{
+    margin-bottom:11px;
+}
+.movies .movies_right ul li a{
+    float: left;
+    padding-right: 10px;
+}
+.movies .movies_right ul li span{
+    color: #ffffff;
+    line-height: 25px;
+}
+.movies .movies_right ul li p{
+    color: #999999;
+}
+.movies .movies_right ul li p b{
+    float: right;
+}
+/*视频播放下面的内容*/
+.movies .movies_down{
+    border: 1px solid #cccccc;
+    color: #808083;
+    overflow: hidden;
+    background-color: white;
+}
+.movies .movies_down dl{
+    float: left;
+}
+.movies .movies_down dl dd{
+    padding:9px 24px 9px 23px;
+    border-right: 1px solid #cccccc;
+    float: left;
+    overflow: hidden;
+}
+.movies .movies_down dl dd a{
+    padding: 0 4px;
+    float: left;
+    width: 23px;
+    height: 22px;
+}
+.movies .movies_down dl dd a.zan{
+    background: url("../images/content_15.png") no-repeat;
+}
+.movies .movies_down dl dd a.collect{
+    background: url("../images/content_17.png") no-repeat;
+}
+.movies .movies_down dl dd a.load{
+    background: url("../images/content_19.png") no-repeat;
+}
+.movies .movies_down dl dd a.share{
+    background: url("../images/content_19.png") no-repeat;
+}
+.movies .movies_down dl dd a.qzone{
+    background: url("../images/content_21.png") no-repeat;
+}
+.movies .movies_down dl dd a.qq{
+    background: url("../images/content_23.png") no-repeat;
+}
+.movies .movies_down dl dd a.weibo{
+    background: url("../images/content_25.png") no-repeat;
+}
+.movies .movies_down dl dd a.weixin{
+    background: url("../images/content_27.png") no-repeat;
+}
+.movies .movies_down dl dd>span{
+    margin-top: 2px;
+    float: left;
+}
+.movies .movies_down>span{
+    float: right;
+    margin-top: 9px;
+    margin-right: 43px;
+}
+.movies .movies_down>span b{
+    color: #000;
+}
+
+
+
+
