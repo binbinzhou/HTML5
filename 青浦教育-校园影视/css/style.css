@@ -376,9 +376,6 @@ footer .copyright{
 .column{
     padding: 0 30px;
 }
-.main{
-    margin-bottom: 30px;
-}
 .main h1{
     padding-left: 5px;
 }
@@ -398,15 +395,25 @@ footer .copyright{
     width: 664px;
     height:500px;
     float: left;
+    text-align: center;
     background-color: #303030;
     border-right: 5px solid #3d3d3d;
+}
+.movies .movies_view h4{
+    margin-top: 230px;
+    margin-bottom: 2px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #158687;
+}
+.movies .movies_view p{
+    color: #158687;
 }
 /*视频播放右边内容*/
 .movies .movies_right{
     margin-left: 669px;
     background-color: #303030;
     border-left: 1px solid #2a2a29;
-
 }
 .movies .movies_right>p{
     font-size: 16px;
@@ -430,11 +437,11 @@ footer .copyright{
 .movies .movies_right ul li.last{
     margin-bottom:11px;
 }
-.movies .movies_right ul li a{
+.movies .movies_right ul li>a{
     float: left;
     padding-right: 10px;
 }
-.movies .movies_right ul li span{
+.movies .movies_right ul li span a{
     color: #ffffff;
     line-height: 25px;
 }
@@ -502,7 +509,154 @@ footer .copyright{
 .movies .movies_down>span b{
     color: #000;
 }
-
+/*视频上传内容*/
+.update{
+    overflow: hidden;
+}
+.update p{
+    font-size: 14px;
+    color: #424243;
+}
+.update>img{
+    float: left;
+    padding :19px 5px;
+}
+.update .up_desc{
+    padding :30px 3px 20px 3px;
+    margin-left: 197px;
+}
+.update .up_desc p{
+    font-size: 12px;
+    line-height: 19px;
+}
+.update>h1{
+    margin: 5px 0;
+}
+.update>h1 input{
+    width: 123px;
+    height: 20px;
+    margin: 0 4px;
+    font-size: 12px;
+    border: 1px solid #cccccc;
+}
+.update>h1 b{
+    float: right;
+    margin-right: 90px;
+}
+.update .face_icons{
+    margin:5px 0;
+    overflow: hidden;
+}
+.update .face_icons a{
+    float: left;
+    margin: 0 2px;
+    width: 28px;
+    height:22px;
+}
+.update .face_icons a.icon_1{
+    background: url("../images/content_41.png") no-repeat 0 0;
+}
+.update .face_icons a.icon_2{
+    background: url("../images/content_41.png") no-repeat -28px 0;
+}
+.update .face_icons a.icon_3{
+    background: url("../images/content_41.png") no-repeat -56px 0;
+}
+.update .face_icons a.icon_4{
+    background: url("../images/content_41.png") no-repeat -84px 0;
+}
+.update .face_icons a.icon_5{
+    background: url("../images/content_41.png") no-repeat -112px 0;
+}
+.update .face_icons a.icon_6{
+    background: url("../images/content_41.png") no-repeat -138px 0;
+}
+.update .face_icons a.icon_7{
+    background: url("../images/content_41.png") no-repeat -166px 0;
+}
+.update .face_icons a.icon_8{
+    background: url("../images/content_41.png") no-repeat -194px 0;
+}
+.update .face_icons a.icon_9{
+    background: url("../images/content_41.png") no-repeat -222px 0;
+}
+.update .face_icons a.icon_10{
+     background: url("../images/content_41.png") no-repeat -250px 0;
+ }
+.update .face_icons a.icon_11{
+    background: url("../images/content_41.png") no-repeat -278px 0;
+}
+.update .face_icons .publish{
+    float: right;
+    width: 48px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 4px;
+    border:1px solid #d5d5d5;
+    background-color: #e4e4e4;
+    margin: 8px 58px 0 0 ;
+}
+/*全部评论内容*/
+.comments{
+    margin-bottom: 25px;
+ }
+.comments h1{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d9d9d9;
+}
+.comments h1 span{
+    padding-bottom: 8px;
+    width:57px;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 3px solid #0a6367;
+}
+.comments ul li{
+    border-bottom: 1px solid #d9d9d9;
+    color: #999999;
+}
+.comments ul li h2{
+    padding-top: 12px;
+    padding-bottom: 3px;
+    overflow: hidden;
+}
+.comments ul li h2 span{
+    float: left;
+}
+.comments ul li h2 p{
+    float: right;
+    margin-right: 25px;
+}
+.comments ul li h2 p a{
+    color: #999999;
+    margin-right: 7px;
+    border: 1px solid #d9d9d9;
+    padding: 2px 4px 2px 4px ;
+}
+.comments ul li .com_user{
+    overflow: hidden;
+    padding: 28px 7px 31px 7px;
+}
+.comments ul li .com_user>a{
+    float: left;
+}
+.comments ul li .com_user .user_info{
+    margin-left: 42px;
+}
+.comments ul li .com_user .user_info h3{
+    padding-left: 12px;
+    color: #000;
+}
+.comments ul li .com_user .user_info p{
+    padding-left: 12px;
+    line-height: 27px;
+}
+.comments ul li .com_user .user_info p a{
+    margin-right: 10px;
+    float: right;
+    color: #0091ce;
+}
 
 
 
