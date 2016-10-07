@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>新添加的表单元素</title>
+    <title>新添加的表单元素属性</title>
 </head>
 <body>
     <form action="register.action">
@@ -17,7 +17,7 @@
         调节按钮：<input type="range" name="range"><br>
         email地址：<input type="email" name="email"><br>
         url地址：<input type="url" name="url"><br>
-        手机号码：<input type="tel" name="tel" required pattern="\d{{11}}" autofocus autocomplete="15679666896"><br>
+        手机号码：<input type="tel" name="tel" required pattern="\d{{11}}" autofocus autocomplete="on"><br>
 
         搜索：<input type="search" placeholder="请输入你喜欢的产品" list="sports">
         <datalist id="sports">
@@ -35,7 +35,7 @@
             3、url地址也会自动识别，网址！！！
             4.设置了required属性为比填写！！！还可设置正则表达式为手机号吗匹配pattern="\d{{11}}"
             5.autofocus为自动聚焦，
-            6.autocomplete="15679666896"自动补全属性值
+            6.autocomplete="on"自动补全属性值
          -->
     </form>
 </body>

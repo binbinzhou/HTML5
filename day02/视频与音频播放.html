@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频与音频播放</title>
+    <style>
+        span{ color:red; }
+    </style>
+    <script>
+        window.onload = function () {
+            var duration = document.getElementById("duration");
+            var curtime =  document.getElementById("curtime");
+            var player = document.getElementById("player");
+            var play = document.getElementById("play_btn");
+            var big = document.getElementById("big_btn");
+            var common = document.getElementById("common_btn");
+            var small = document.getElementById("small_btn");
+
+            //console.log(player.duration);
+            duration.innerHTML = parseInt(player.duration)+"s";
+            //点击播放之后播放视频，再次点击之后暂停视频
+            play.onclick = function () {
+                if(player.paused){
+                    player.play();
+                    this.value = "暂停";
+                } else{
+                    player.pause();
+                    this.value = "播放";
+                }
+            };
+            //放大视角
+            big.onclick = function(){
+                player.width = 550;
+            };
+            //普通视角
+            common.onclick = function(){
+                player.width = 400;
+            };
+            //缩小视角
+            small.onclick = function(){
+                player.width = 300;
+            };
+
+
+            //实时更新当前播放时间
+            setInterval(function(){
+               curtime.innerHTML = parseInt(player.currentTime)+"s";
+            },250);
+        };
+    </script>
+</head>
+<body>
+<article>
+    <section>
+        <h3>视频播放</h3>
+        <div>
+            <video controls id="player" src="source/video/MV.mp4" width="400px" height="300px"></video>
+        </div>
+        <div>
+            <button id="play_btn">播放</button>
+            <button id="big_btn">放大</button>
+            <button id="common_btn">正常</button>
+            <button id="small_btn">缩小</button>
+            当前时间：<span id="curtime">0</span>
+            总时长：<span id="duration">0</span>
+        </div>
+    </section>
+
+    <section>
+        <h3>音乐播放</h3>
+        <div>
+            <audio controls src="source/audio/1.mp3"></audio>
+        </div>
+    </section>
+</article>
+
+</body>
+</html>

@@ -24,3 +24,6 @@ img{
 em{
     font-style: normal;
 }
+article,aside,dialog,figure,footer,header,legend,nav,section{
+    display:block;
+}
