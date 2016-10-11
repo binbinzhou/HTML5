@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>将数据保存在本地(硬盘设备中)</title>
+    <style>
+        #content{
+            width: 400px;
+            height:200px;
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var username = document.getElementById("username");
+            var userage = document.getElementById("userage");
+            var content = document.getElementById("content");
+            var btns = document.getElementsByTagName("button");
+            btns[0].onclick = function () {
+                var name = username.value;
+                var age = userage.value;
+                if(name && age){
+                    //保存数据在本地中
+                    localStorage.setItem("name",name);
+                    localStorage.setItem("age",age);
+                    localStorage.setItem("time",new Date().toLocaleString());
+                    alert("保存成功！");
+                } else{
+                    alert("请输入值！");
+                }
+            };
+            btns[1].onclick = function () {
+                //用一个变量来接收从本地获取到的值，
+                var name = localStorage.getItem("name");
+                var age = localStorage.getItem("age");
+                var time = localStorage.getItem("time");
+                content.innerHTML = "姓名："+name+"&nbsp;"+"年龄："+age+"<br/>"+"发布时间"+time;
+            };
+            //将数据存储在本地的时候当浏览器关闭之后还能访问到数据，打开在其他选项卡中也能访问到
+
+            //当其他网页改变了当前网页在本地存储的值的时候会激发这个事件
+            window.onstorage = function (event) {
+                console.log("key:",event.key);
+                console.log("oldValue",event.oldValue);
+                console.log("newValue",event.newValue);
+                console.log("url",event.url);
+                console.log("storageArea",event.storageArea);
+            }
+        };
+    </script>
+</head>
+<body>
+<section>
+    <h2>保存数据到本地</h2>
+    <div>
+        <lable for="username">请输入姓名：</lable>
+        <input type="text" id="username"><br>
+        <lable for="userage">请输入年龄：</lable>
+        <input type="text" id="userage">
+    </div>
+    <div>
+        <button>保存</button>
+        <button>显示</button>
+    </div>
+    <div id="content">
+
+    </div>
+</section>
+
+</body>
+</html>

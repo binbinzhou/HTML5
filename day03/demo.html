@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画布</title>
+    <script>
+        window.onload = function () {
+
+            //1.获取canvas对象
+            var one = document.getElementById("one");
+            //2.获取到上下文对象
+            var context = one.getContext("2d"); //只支持2d
+            //3.设定样式，（填充样式、边框样式）
+            //console.log(context.constructor);
+            context.fillStyle = "#ddd";  //fillStyle是一个属性
+            context.lineWidth = 1;
+            context.strokeStyle = "red";
+            //4.图形绘制
+            //原点0,0在画布的左上方，前两个为xy刻度尺,填充的四个参数分别为：x轴起点，y轴起点，宽度，高度
+            //290是从上往下延伸，所以是290，-180是从下往上延伸的高度，
+            context.fillRect(0,0,1,290);
+            context.fillRect(0,290,300,1);
+            context.fillRect(20,290,40,-180);
+            context.fillRect(80,290,40,-100);
+            context.fillRect(140,290,40,-250);
+
+            context.strokeRect(201,290,38,-220);
+
+            //context.clearRect(0,0,200,200)    清除某块区域
+
+
+            //1.获取画布对象
+            var two = document.getElementById("two");
+
+            //2.获取画布对象上下文
+            var context = two.getContext("2d");
+            //3.设定样式
+            context.fillStyle = "#ddd";
+            //4.1开始路径
+            context.beginPath();
+            //4.2路径的生成
+            context.moveTo(50,50);      //起点位置
+            context.lineTo(150,100);    //结束位置
+
+            //context.moveTo(150,100);    //不闭合
+            context.lineTo(250,100);
+            //4.3.路径的结束
+            context.closePath();    //为什么要关闭路径
+            //4.4.路径的绘制，边框式
+            context.stroke();
+
+            context.beginPath();
+            //圆形的绘制
+            context.arc(100,100,80,0,Math.PI/2,Math.PI*2);
+            context.closePath();
+            //填充式绘制路径
+            context.fill();
+
+            context.beginPath();
+            //曲线的绘制
+            context.moveTo(200,0);
+            context.bezierCurveTo(250,50,150,250,200,300);
+            //context.closePath();
+            context.stroke();
+            //------------------------------------------------------
+            //1.获取画布对象
+            var three = document.getElementById("three");
+            //2.获取画布对象上下文
+            var context = three.getContext("2d");
+            //var g1 = context.createLinearGradient(200,0,200,300);
+            //var g1 = context.createRadialGradient(200,250,30,200,0,100);  //非同心圆
+            var g1 = context.createRadialGradient(100,150,30,100,150,100);  //同心圆
+            g1.addColorStop(0,"#d2f2a0");    //参数一为偏移量，取值为0到1
+            g1.addColorStop(1,"#fff");
+            context.fillStyle = g1; //渐变对象
+            context.fillRect(0,0,400,300);
+            //------------------------------------------------------
+            //1.获取画布对象
+            var four = document.getElementById("four");
+            //2.获取画布对象上下文
+            var context = four.getContext("2d");
+            context.fillStyle = "#999";
+            context.fillRect(0,0,200,50);
+            context.fillRect(220,0,200,50);
+            context.fillRect(0,70,200,50);
+            context.fillRect(220,70,200,50);
+            /*
+            context.fillRect(0,0,200,50);
+            context.translate(220,0);   //移动的是坐标轴
+
+            context.fillRect(0,0,200,50);
+            context.translate(-220,70);
+
+            context.fillRect(0,0,200,50);
+            context.translate(220,0);
+
+           // context.scale(2,2);   //放大
+            context.fillRect(0,0,200,50);
+            */
+
+            //------------------------------------------------------
+            //1.获取画布对象
+            var five = document.getElementById("five");
+            //2.获取画布对象上下文
+            var context = five.getContext("2d");
+            //3.设定样式
+            context.fillStyle = "#ddd";
+            context.lineWidth = 4;
+            //4.1开始路径
+            context.beginPath();
+            context.arc(300,200,100,0,Math.PI*2);
+            context.closePath();
+            context.stroke();
+            //绘制小时线时刻度
+            context.beginPath();
+            context.moveTo(300,100);
+            context.lineTo(300,120);
+            context.closePath();
+            context.stroke();
+
+
+        };
+    </script>
+</head>
+<body>
+<header>
+    <h1>画布功能</h1>
+</header>
+<article>
+    <section>
+        <h2>1.基本步骤</h2>
+        <figure>
+            <canvas id="one" width="400" height="300"></canvas>
+            <figcaption>就业统计图</figcaption>
+        </figure>
+    </section>
+    <section>
+        <h2>2.路径</h2>
+        <figure>
+            <canvas id="two" width="400" height="300"></canvas>
+            <figcaption>圆形以及曲线图</figcaption>
+        </figure>
+    </section>
+    <section>
+        <h2>3.渐变</h2>
+        <figure>
+            <canvas id="three" width="400" height="300"></canvas>
+            <figcaption>渐变图</figcaption>
+        </figure>
+    </section>
+    <section>
+        <h2>4.坐标变换</h2>
+        <figure>
+            <canvas id="four" width="600" height="400"></canvas>
+            <figcaption>坐标变换</figcaption>
+        </figure>
+    </section>
+    <section>
+        <h2>5.圆</h2>
+        <figure>
+            <canvas id="five" width="600" height="400"></canvas>
+            <figcaption>钟表</figcaption>
+        </figure>
+    </section>
+</article>
+
+</body>
+</html>

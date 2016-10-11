@@ -1,0 +1,31 @@
+*{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+}
+header{
+    height:80px;
+    width: 500px;
+    background-color: #6CA5C4;
+    color: #FFF;
+    line-height:80px;
+    padding-left: 50px;
+}
+article>section{
+    margin-top: 10px;
+    margin-left: 15px;
+}
+table.tb1{
+    border-collapse: collapse;
+    width: 500px;
+    text-align: center;
+    margin: 10px 0;
+}
+table th,table td{
+    border: 1px solid #ddd;
+}
+.hiddenTr{
+    display: none;
+}

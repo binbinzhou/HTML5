@@ -1,0 +1,9 @@
+CACHE MANIFEST
+#versiom 3.0
+CACHE:
+list.html
+css/style.css
+js/index.js
+images/test.png
+NETWORK:
+*

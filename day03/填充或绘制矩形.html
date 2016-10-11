@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>填充或绘制矩形</title>
+    <script>
+        window.onload = function () {
+            //------------------------基本步骤----------------------------------
+            //1.获取canvas对象
+            var one = document.getElementById("one");
+            //2.获取到上下文对象    其中参数只能为2d
+            var context = one.getContext("2d");
+            //3.设定样式（填充的样式或者边框样式）
+            context.fillStyle = "#ddd";
+            context.strokeStyle = "red";
+            //4.绘制图形    fillRect方法与StrokeRect方法
+            context.fillRect(0,0,100,100);  //参数一二为矩形的x坐标，y坐标，参数三四为矩形的宽度和高度
+            context.strokeRect(110,100,100,100);
+
+            //------------------------绘制统计表图-----------------------------
+            var two = document.getElementById("two");
+            var context = two.getContext("2d");
+            context.fillStyle = "pink";
+            context.strokeStyle = "black";
+            //指定线宽
+            context.lineWidth = 1;
+            //以下是填充式绘制图形
+            context.fillRect(0,0,2,290);    //表示x轴
+            context.fillRect(0,290,290,2);  //表示y轴，因为0,0是在左上角，坐标的正方向是往下往右延伸的！！
+            context.fillRect(20,290,30,-150);
+            context.fillRect(70,290,30,-100);
+            context.fillRect(120,290,30,-190);
+            context.fillRect(170,290,30,-250);
+            //以下是边框式绘制图形
+            context.strokeRect(220,290,30,-130);
+
+            //清除某块区域
+            //context.clearRect(0,0,200,200);   //从0,0,开始width为200height200的区域被清除
+        };
+    </script>
+</head>
+<body>
+<article>
+    <section>
+        <h1>绘制的四个基本步骤</h1>
+        <figure>
+            <canvas id="one" width="400" height="300"></canvas>
+            <figcaption>
+                基本绘制
+            </figcaption>
+        </figure>
+    </section>
+</article>
+
+<article>
+    <section>
+        <h2>绘制统计表图</h2>
+        <figure>
+            <canvas id="two" width="400" height="300"></canvas>
+            <figcaption>绘制矩形统计表图形</figcaption>
+        </figure>
+    </section>
+</article>
+
+</body>
+</html>

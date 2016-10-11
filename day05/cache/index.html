@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" manifest="index.manifest">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js"></script>
+    <script>
+        //调用index.js中的方法
+        test();
+        //强制检测刷新
+        setInterval(function () {
+            applicationCache.update();
+        },1000*2);
+        applicationCache.onchecking = function () {
+            console.log("checking manifest update 正在检查更新!");
+        };
+        applicationCache.onnoupdate = function () {
+            console.log("No Update文件没有更新 !");
+        };
+        applicationCache.onupdateready= function () {
+            console.log("更新就绪!");
+            var flag = confirm("现在更新吗？");
+            if(flag){
+                applicationCache.swapCache();
+            }
+        };
+        applicationCache.error = function () {
+            console.log("Error!",arguments);
+        };
+    </script>
+</head>
+<body>
+<header>
+    <h1>binbinzhou's Blog</h1>
+    <nav>
+        <a href="index.html">index</a>
+        <a href="list.html">list</a>
+        <a href="content.html">content</a>
+    </nav>
+</header>
+<article>
+    <h3>一张程序员的图片</h3>
+    <section>
+        <figure>
+            <img src="images/test.png" alt="">
+            <figcaption>图片展示</figcaption>
+        </figure>
+    </section>
+</article>
+
+</body>
+</html>

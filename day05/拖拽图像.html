@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽图像</title>
+    <style>
+        img{
+            width: 400px;
+            height: 300px;
+        }
+        div{
+            padding:5px;
+            float: left;
+            margin: 10px;
+            width: 400px;
+            height: 300px;
+            border: 3px solid #999;
+            border-radius: 5px;
+            box-shadow: 0 0 6px 5px #ddd;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //由于img,a标签是默认允许拖拽的，所以在标签内部不需要加draggable = "true",
+            var pic = document.getElementById("pic");
+            var one = document.getElementById("one");
+            var two = document.getElementById("two");
+            var divs = document.getElementsByTagName("div");
+
+            //给被拖拽元素绑定ondragstart事件
+            pic.ondragstart = function (event) {
+                //获取数据传输对象
+                var dt = event.dataTransfer;
+                //设置值
+                dt.setData("text/plain",event.target.id);
+            };
+            for(var i = 0;i<divs.length;i++){
+                divs[i].ondrop = function (event) {
+                    var dt = event.dataTransfer;
+                    var id = dt.getData("text/plain");
+                    var element = document.getElementById(id);
+                    this.appendChild(element);
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+            }
+
+            for(var i = 0;i<divs.length;i++){
+                divs[i].ondragover = function (event) {
+                    event.preventDefault();
+                }
+            }
+
+/*
+            //当个绑定
+            //给目的地元素绑定ondrop事件
+            two.ondrop = function (event) {
+                 var dt = event.dataTransfer;
+                 var id = dt.getData("text/plain");
+                 var element = document.getElementById(id);
+                 this.appendChild(element);
+                 event.preventDefault();
+                 event.stopPropagation();
+            };
+
+            //给目的地元素绑定ondrop事件
+            one.ondrop = function (event) {
+                var dt = event.dataTransfer;
+                var id = dt.getData("text/plain");
+                var element = document.getElementById(id);
+                this.appendChild(element);
+                event.preventDefault();
+                event.stopPropagation();
+            };
+
+            //给目的地元素绑定ondragover事件，兼容谷歌和苹果浏览器下也能拖拽，
+            two.ondragover = function (event) {
+                event.preventDefault();
+            }
+ */
+
+        }
+    </script>
+</head>
+<body>
+    <div id="one">
+        <img src="images/test.png" alt="" id="pic">
+    </div>
+    <div id="two">
+
+    </div>
+    <div id="three">
+
+    </div>
+</body>
+</html>

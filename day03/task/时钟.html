@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟</title>
+    <script>
+        window.onload = function () {
+            var time = document.getElementById("time");
+            var context = time.getContext("2d");
+            context.fillStyle = "lightblue";
+            context.beginPath();
+            context.arc(250,250,190,0,Math.PI*2);
+            context.closePath();
+            context.fill();
+            for(var i = 0;i<12;i++){
+                context.save();
+                context.strokeStyle = "black";
+                context.translate(250,250);
+                context.rotate(i*30*Math.PI/180);
+                context.beginPath();
+                context.moveTo(0,-170);
+                context.lineTo(0,-190);
+                context.closePath();
+                context.stroke();
+                context.restore();
+            }
+        };
+    </script>
+</head>
+<body>
+<canvas id="time" width="600" height="450"></canvas>
+</body>
+</html>

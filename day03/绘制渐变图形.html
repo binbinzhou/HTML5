@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制渐变图形</title>
+    <script>
+        window.onload = function () {
+            //1.获取canvas对象
+            var four = document.getElementById("four");
+            //2.获取canvas上下文对象
+            var context = four.getContext("2d");
+            //--------------------------线性渐变------------------------------
+            //var g1 = context.createLinearGradient(200,0,200,300);
+
+            //--------------------------径向渐变------------------------------
+            //var g1 = context.createRadialGradient(100,150,30,100,150,100);  //同心圆情况下
+            var g1 = context.createRadialGradient(200,250,30,200,0,100);  //非同心圆情况下形成圆锥状
+            g1.addColorStop(0,"green");
+            g1.addColorStop(1,"#fff");
+            context.fillStyle = g1;
+            context.fillRect(0,0,400,300);
+        };
+    </script>
+</head>
+<body>
+    <article>
+        <section>
+            <h1>绘制渐变图形</h1>
+            <figure>
+                <canvas id="four" width="600" height="400"></canvas>
+                <figcaption>
+                    1.线性渐变。2.径向渐变
+                </figcaption>
+            </figure>
+        </section>
+    </article>
+</body>
+</html>

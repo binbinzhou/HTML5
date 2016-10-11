@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制文字</title>
+    <script>
+        window.onload = function () {
+            var one = document.getElementById("one");
+            var context = one.getContext("2d");
+            var g1 = context.createLinearGradient(0,0,400,400);
+            g1.addColorStop(0,"#ccc");
+            g1.addColorStop(1,"#fff");
+            context.fillStyle = g1;
+            context.fillRect(0,0,400,400);
+
+            //绘制文字
+            //设置文字的样式
+            context.font = "italic normal bold 25px sans-serif";
+            context.fillStyle = "#fff";
+            context.strokeStyle = "#000";
+
+            //给图像绘制阴影
+            context.shadowOffsetX = 5;
+            context.shadowOffsetY = 5;
+            context.shadowColor = "red";
+            context.shadowBlur = 2;
+
+            //文本的基线
+            context.textBaseline = "top";
+            context.fillText("Hello world!",50,50);
+            context.strokeText("Welcome To Canvas!",50,100);
+        }
+    </script>
+</head>
+<body>
+    <article>
+        <section>
+            <h1>渐变与绘制字体</h1>
+            <figure>
+                <canvas id="one" width="500" height="400">
+                    该浏览器支持Canvas
+                </canvas>
+                <figcaption>绘制字体</figcaption>
+            </figure>
+        </section>
+    </article>
+
+</body>
+</html>

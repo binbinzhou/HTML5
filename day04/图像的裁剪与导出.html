@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图像的裁剪与导出</title>
+    <style>
+        section{
+            float: left;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var one = document.getElementById("one");
+            var context = one.getContext("2d");
+            var g1 = context.createLinearGradient(0,0,400,400);
+            g1.addColorStop(0,"pink");
+            g1.addColorStop(1,"#fff");
+            context.fillStyle = g1;
+            context.fillRect(0,0,400,400);
+
+            //绘制一张图片正好盖住渐变的矩形的大小
+            var image = new Image();
+            image.src = "images/test.png";
+            image.onload = function () {
+                context.drawImage(image,0,0,400,400);
+            };
+
+            //裁剪一个随机产生的半径为100的圆
+            var random = Math.round(Math.random()*100)+100;
+            //console.log(random);
+            context.beginPath();
+            context.arc(random,random,100,0,Math.PI*2);
+            context.closePath();
+            context.clip();
+
+            //导出图片
+            var btns = document.getElementsByTagName("button")[0];
+            var result = document.getElementById("result");
+            btns.onclick = function () {
+                var data = one.toDataURL("image/jpg");
+                result.src = data;
+            }
+
+
+
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <h2>图像的裁剪与导出</h2>
+        <canvas id="one" width="500" height="400">
+
+        </canvas>
+        <div>
+            <button>导出当前图片</button>
+        </div>
+    </section>
+    <section>
+        <h2>导出的图片</h2>
+        <img src="" alt="" id="result">
+    </section>
+
+</body>
+</html>

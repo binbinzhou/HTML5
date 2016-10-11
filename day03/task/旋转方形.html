@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转方形</title>
+    <script>
+        window.onload = function () {
+            var one = document.getElementById("one");
+            var context = one.getContext("2d");
+            for(var i = 0;i<20;i++){
+                context.save();
+                context.fillStyle = "rgba(0,0,255,0.5)";
+                context.translate(250,200);
+                context.scale(0.05*i,0.07*i);
+                context.rotate(i*25*Math.PI/180);
+                context.fillRect(20,20,120,50);
+                context.stroke();
+                context.restore();
+            }
+        };
+    </script>
+</head>
+<body>
+<canvas id="one" width="700" height="500"></canvas>
+</body>
+</html>

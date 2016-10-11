@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟实例</title>
+    <script>
+        window.onload = function () {
+            var time = document.getElementById("time");
+            var context = time.getContext("2d");
+            function timeRun(){
+                var hour=new Date().getHours();
+                var min=new Date().getMinutes();
+                var sec=new Date().getSeconds();
+                hour=hour+min/60;
+                //console.log(min);
+
+                context.fillStyle = "lightblue";
+                context.beginPath();
+                context.arc(160,160,150,0,Math.PI*2);
+                context.closePath();
+                context.fill();
+
+                //绘制时针尺
+                context.save();
+                context.fillStyle = "#000";
+                context.translate(160,160);
+                context.rotate(hour*30*Math.PI/180);
+                context.beginPath();
+                context.moveTo(0,-15);
+                context.lineTo(-5,20);
+                context.lineTo(0,80);
+                context.lineTo(5,20);
+                context.closePath();
+                context.fill();
+                context.restore();
+
+                //绘制分针尺
+                context.save();
+                context.fillStyle = "#000";
+                context.translate(160,160);
+                context.rotate(min*6*Math.PI/180);
+                context.beginPath();
+                context.moveTo(-15,15);
+                context.lineTo(5,-12);
+                context.lineTo(80,-80);
+                context.lineTo(12,-5);
+                context.closePath();
+                context.fill();
+                context.restore();
+
+                //绘制秒针尺
+                context.save();
+                context.fillStyle = "red";
+                context.translate(160,160);
+                context.rotate(sec*6*Math.PI/180);
+                context.beginPath();
+                context.moveTo(-25,0);
+                context.lineTo(20,-5);
+                context.lineTo(145,0);
+                context.lineTo(20,5);
+                context.closePath();
+                context.fill();
+                context.restore();
+
+                //绘制时钟的原点
+                context.save();
+                context.fillStyle = "#999";
+                context.beginPath();
+                context.arc(160,160,5,0,Math.PI*2);
+                context.closePath();
+                context.fill();
+                context.restore();
+
+                //循环
+                for(var i=0;i<12;i++){
+                    context.save();     //保存当前的坐标轴位置及绘图状态，
+                    context.translate(160,160);     //把坐标轴的起始位置移动到圆的圆心位置，再绘制刻度
+                    context.beginPath();
+                    context.rotate(i*Math.PI/6);    //每次变化的都为30*i度
+                    context.moveTo(140,0);
+                    context.lineTo(150,0);
+                    context.closePath();
+                    context.stroke();
+                    context.restore();     //恢复之前保存的绘图状态
+                    //注：这里的保存与恢复主要是控制坐标轴的起始位置，恢复之后坐标轴原点变成了0,0，保存之后又是160,160
+                }
+            }
+            timeRun();
+            setInterval(timeRun,1000);
+
+
+
+
+
+            /*
+             context.save();
+             context.translate(160,160);
+             context.beginPath();
+             context.rotate(0*Math.PI/6);
+             context.moveTo(140,0);
+             context.lineTo(150,0);
+             context.closePath();
+             context.stroke();
+             context.restore();
+
+             context.save();
+             context.translate(160,160);
+             context.beginPath();
+             context.rotate(1*Math.PI/6);
+             context.moveTo(140,0);
+             context.lineTo(150,0);
+             context.closePath();
+             context.stroke();
+             context.restore();
+
+             context.save();
+             context.translate(160,160);
+             context.beginPath();
+             context.rotate(2*Math.PI/6);
+             context.moveTo(140,0);
+             context.lineTo(150,0);
+             context.closePath();
+             context.stroke();
+             context.restore();
+             */
+        };
+    </script>
+</head>
+<body>
+<article>
+    <section>
+        <h1>绘制时钟</h1>
+        <figure>
+            <canvas id="time" width="500" height="400">
+                该浏览器支持Canvas
+            </canvas>
+            <figcaption>这是一个会动的时钟</figcaption>
+        </figure>
+    </section>
+</article>
+
+
+</body>
+</html>

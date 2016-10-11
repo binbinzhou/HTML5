@@ -1,0 +1,144 @@
+1. canvas
+	画布
+	ps
+	1) 使用步骤
+		1. 获取canvas对象
+		2. 获取canvas对象的上下文环境
+		3. 设定样式
+			context.fillStyle = 
+					颜色
+					渐变
+			context.strokeStyle
+			context.lineWidth
+			context.font
+			context.pattern
+			...
+		4. 绘制图形
+			矩形
+			路径（直线，多边形，原型）
+			图像
+			文字
+		5. 导出
+	2) 绘制矩形
+		fillRect(x,y,w,h)  		填充矩形
+		strokeRect(x,y,w,h) 	勾勒矩形
+		clearRect(x,y,w,h)		清除矩形
+	3) 路径
+		1. 路径的开启
+			beginPath();
+		2. 路径产生
+			1) 圆形
+				arc(x,y,r,begin,end);
+				Math.PI = 180度
+			2) 直线
+				moveTo(x,y)
+				lineTo(x,y);
+			3) 曲线
+				bezierCurveTo(c1x,c1y,c2x,c2y,x,y)
+				quadraticCurveTo(cx,cy,x,y)
+		3. 路径关闭
+			closePath();
+		4. 路径的绘制
+	4) 坐标移动
+		translate(x,y)
+		scale(x,y)
+		rotate(angu)
+
+	5) 状态保存与恢复
+		save();
+		restore();
+
+	6) 渐变
+		1. 线性
+		var g1 = context.createLinearGradient(x1,y1,x2,y2);
+		g1.addColorStop(offset,color1);
+		g1.addColorStop(offset,color2);
+		context.fillStyle = g1;
+
+		2. 径向
+		var g1 = context.createRadialGradient(x1,y1,r1,x2,y2,r2);
+		g1.addColorStop(offset,color1);
+		g1.addColorStop(offset,color2);
+		context.fillStyle = g1;
+
+	7) 绘制文字
+		fillText(text,x,y,[maxWidth]);
+		fillRect()
+		fill()
+
+		strokeText(text,x,y,[maxWidth]);
+
+	8) 绘制图像
+		//创建img对象
+		var image = new Image();
+		image.src = "";
+
+		//重载
+		context.drawImage(image,0,0);
+	9) 图像的裁剪
+		1. 绘制裁剪路径
+		2. 调用clip() 进行裁剪
+		3. 图像的绘制
+	10)图像的导出
+		canvas.toDataURL("image/jpg");
+
+	11)图形的组合
+		globalCompositeOperation	
+			source-over		 (后来图像)
+			desctination-over(原来图像)
+
+			source-in
+			desctination-in
+
+			source-out
+			desctination-out
+
+			source-atop
+				后来图像中交集显示，其他隐藏。原来图像显示
+			desctination-atop
+
+			
+拖拽
+	draggable=true
+	事件
+		被拖拽
+			dragstart
+			drag
+			dragend
+
+		拖拽的目的地
+			dragenter
+			dragover
+			drop
+		
+	dragstart->drag->dragenter->dragover->drop->dragend
+
+	source 	被拖拽的元素
+	target	拖拽的目的地
+
+	1.为了能够让火狐浏览器产生拖拽效果
+	source.ondragstart= function(event){
+		var dt = event.dataTransfer;
+		dt.setDate("text/plain",this.id);
+	}
+	//为了兼容google chrome safari
+	target.ondragover = function(event){
+		event.preventDefault();
+	}
+
+	target.ondrop = function(event){
+		var dt = event.dataTransfer;
+		var id = dt.getDate("text/plain");
+		...
+		//为了阻止火狐浏览器打开新窗口
+		event.stopPropagation();
+	}
+
+
+
+
+
+
+
+
+

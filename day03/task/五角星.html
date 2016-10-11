@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>五角星</title>
+    <script>
+        window.onload = function () {
+            var fiveStar = document.getElementById("fiveStar");
+            var ctxt = fiveStar.getContext("2d");
+            ctxt.strokeStyle = "#000";
+            ctxt.fillStyle = "red";
+            ctxt.beginPath();
+            ctxt.moveTo(200,0);//1
+            ctxt.lineTo(318,362);//2
+            ctxt.lineTo(10,138);//3
+            ctxt.lineTo(390,138);//4
+            ctxt.lineTo(82,362);//5
+
+            ctxt.closePath();
+
+            ctxt.fill();
+            ctxt.stroke();
+
+        };
+    </script>
+</head>
+<body>
+    <canvas id="fiveStar" width="600" height="450"></canvas>
+</body>
+</html>

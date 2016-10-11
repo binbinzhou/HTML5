@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>太阳光晕</title>
+    <script>
+        window.onload = function () {
+            var sun = document.getElementById("sun");
+            var context = sun.getContext("2d");
+            /*
+                var g1 = context.createRadialGradient(50,50,30,350,350,100);
+                g1.addColorStop(0,"green");
+                g1.addColorStop(0.5,"yellow");
+                g1.addColorStop(1,"#fff");
+                context.fillStyle = g1;
+                context.fillRect(0,0,400,400);
+                */
+            var g1 = context.createRadialGradient(20,20,10,20,20,20);  //同心圆情况下
+            g1.addColorStop(0,"green");
+            g1.addColorStop(1,"#fff");
+            context.fillStyle = g1;
+            context.fillRect(0,0,40,40);
+
+        };
+    </script>
+</head>
+<body>
+    <canvas id="sun" width="600" height="450"></canvas>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sqlLite</title>
+</head>
+<body>
+<button>创建数据库</button>
+<button>创建表</button>
+<button>向表中添加数据</button>
+<button>查询表数据</button>
+<button>更新表数据</button>
+<button>删除数据</button>
+<script>
+    var btns = document.getElementsByTagName("button");
+
+    //封装获取数据库
+    function getDB() {
+        var db = openDatabase("db1","1.0","this is my first DB",2*1024*1024);
+        return db;
+    }
+
+    //创建数据库
+    btns[0].onclick = function () {
+        //获取数据库
+        var db = getDB();
+        console.log(db);
+        alert("创建数据库成功");
+    };
+
+    //创建表
+    btns[1].onclick = function () {
+        //获取数据库
+        var db = getDB();
+        //创建表，执行sql
+        db.transaction(function(transaction){
+            //console.log(transaction);
+            transaction.executeSql("CREATE TABLE  IF NOT EXISTS tbl_user(id INTEGER,name TEXT,age INTEGER)",[],function (transaction,result) {
+                alert("创建表成功！");
+                console.log(transaction);
+                console.log(result);
+            },function (transaction,error) {
+                alert("创建失败！");
+                console.log(transaction,error);
+            })
+        });
+    };
+    //向表中添加数据
+    btns[2].onclick = function () {
+        //1获取数据库
+        var db = getDB();
+        //2获取事务
+        db.transaction(function(transaction) {
+            //3执行sql，
+            var sql = "insert into tbl_user values(?,?,?)";  //问号表示占位符
+            transaction.executeSql(sql,[1,"Tom",20],function (transaction,result) {
+                console.log(transaction,result);
+                alert("插入成功！");
+            });
+        });
+    };
+    //查询数据
+    btns[3].onclick = function () {
+        //1获取数据库
+        var db = getDB();
+        //2获取事务
+        db.transaction(function (transaction) {
+            //3执行sql
+            var sql = "select * from tbl_user";
+            transaction.executeSql(sql,[],function (transaction,result) {
+                //4获取结果集
+                var rows = result.rows;
+                for(var key in rows){
+                    var val = rows[key];
+                    console.log(key,val);
+                }
+            });
+
+        })
+    };
+
+    //更新
+    btns[4].onclick = function () {
+        var db = getDB();
+        db.transaction(function (transaction) {
+            var sql = "update tbl_user set name = ?";
+            transaction.executeSql(sql,["张三"],function () {
+                alert("更新成功！");
+            });
+        })
+    };
+    //删除
+    btns[5].onclick = function () {
+        var db = getDB();
+        db.transaction(function (transaction) {
+            var sql = "delete from tbl_user where id=?";
+            transaction.executeSql(sql,[1],function () {
+                alert("删除成功！");
+            });
+        })
+    };
+
+
+
+</script>
+
+</body>
+</html>

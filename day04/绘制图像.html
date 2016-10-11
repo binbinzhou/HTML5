@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制图像</title>
+    <script>
+        window.onload = function () {
+            var one = document.getElementById("one");
+            var context = one.getContext("2d");
+            //创建图像
+            var image = new Image();
+            image.src = "images/test.png";
+            //将图像绘制到画布中，必须等图片加载完之后才能对图片进行操作
+            image.onload = function () {
+                //context.drawImage(image,0,0); //0,0表示起点坐标
+                context.drawImage(image,0,0,500,400);      //500,400表示绘制时的图像的宽度与高度
+
+                //局部放大功能
+                context.drawImage(image,100,100,50,50,150,150,200,200);
+                /*
+                * sx,sy表示源图像的被复制区域在画布中的起始横坐标与起始纵坐标
+                 sw,sy表示源图像被复制区域的宽度与高度
+                 dx,dy表示复制后的目标图像在画布中的起始横坐标与起始纵坐标
+                 dw,dh表示复制后的目标图像的宽度与高度
+                *
+                * */
+            };
+        }
+    </script>
+</head>
+<body>
+<section>
+    <h2>绘制图像</h2>
+    <canvas id="one" width="500" height="400">
+
+    </canvas>
+</section>
+</body>
+</html>

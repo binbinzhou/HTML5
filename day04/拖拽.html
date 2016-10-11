@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        div{
+            border:1px solid #158687;
+            margin:10px;
+        }
+        .content{
+            overflow: hidden;
+        }
+        .source{
+            width:100px;
+            height:100px;
+            float: left;
+        }
+        #target{
+            width:500px;
+            height:300px;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            var sources = document.getElementsByClassName("source");    //是一个类数组对象
+            var target = document.getElementById("target");
+            for(var i=0;i<sources.length;i++){
+                //给被拖拽的元素绑定ondragstart事件
+                sources[i].ondragstart = function (event) {
+                    //获取数据传输对象，
+                    var dt = event.dataTransfer;
+                    //设置值
+                    dt.setData("text/plain",this.id);
+                    //拖拽的时候把this.id也传输过去
+                }
+            }
+
+            //给目的地元素绑定ondrop事件
+            target.ondrop = function (event) {
+                //获取数据传输对象，
+                var dt = event.dataTransfer;
+                //用一个变量来接收获取到的值
+                var id = dt.getData("text/plain");
+                var demo = document.getElementById(id);
+                this.appendChild(demo);
+                //在火狐下阻止新页面的跳转
+                event.preventDefault();
+                event.stopPropagation();
+            };
+            //如果想要在google,safari中实现拖拽效果，必须重写事件ondragover
+            target.ondragover = function (event) {
+                var dt = event.dataTransfer;
+                event.preventDefault();
+            }
+            
+        };
+    </script>
+</head>
+<body>
+    <section>
+        <div class="content">
+            <div class="source" id="source1" draggable="true">
+                请拖拽1
+            </div>
+            <div class="source" id="source2" draggable="true">
+                请拖拽2
+            </div>
+            <div class="source" id="source3" draggable="true">
+                请拖拽3
+            </div>
+        </div>
+        <a href="http://www.briup.com">hello</a>
+        <hr>
+        <div id="target"></div>
+    </section>
+
+</body>
+</html>

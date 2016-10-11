@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>坐标变换</title>
+    <script>
+        window.onload = function(){
+            var five = document.getElementById("five");
+            var context = five.getContext("2d");
+            context.fillStyle = "#ddd";
+            context.fillRect(0,0,100,30);
+            context.fillRect(110,0,100,30); //向右移10像素
+            context.fillRect(0,40,100,30);  //向下移10像素
+            context.fillRect(220,40,100,30);
+
+        };
+    </script>
+</head>
+<body>
+<article>
+    <section>
+        <h1>坐标变换</h1>
+        <figure>
+            <canvas id="five" width="500" height="400"></canvas>
+            <figcaption>坐标的变换</figcaption>
+        </figure>
+    </section>
+</article>
+
+</body>
+</html>

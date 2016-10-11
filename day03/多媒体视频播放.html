@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多媒体视频播放</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .video{
+            overflow: hidden;
+            margin: 20px;
+        }
+        .video>div{
+            float: left;
+        }
+        .video_left{
+            border-radius: 5px;
+            background-color: #ddd;
+            border-right: 5px solid #3f3f3f;
+            border-left: 5px solid #3f3f3f;
+        }
+        .video_right ul li{
+            width: 180px;
+            height:95px;
+            margin-bottom: 10px;
+            background-color: #ddd;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var player = document.getElementById("player");
+            var btns = document.getElementsByTagName("button");
+            var time = document.getElementById("time");
+            var allTime = document.getElementById("allTime");
+            allTime.innerHTML = Math.round(player.duration);
+            //在js中使用video属性一般都用布尔值
+            player.controls = true;
+            player.autoplay = false;
+
+            //视频还未播放时展示的图片
+            player.poster = "images/test.png";
+            //记录播放实时时间
+            setInterval(function () {
+                if(!player.paused){
+                    time.innerHTML = Math.round(player.currentTime);
+                }
+            },1000);
+            //切换播放与暂停
+            btns[0].onclick = function () {
+                if(player.paused){
+                    player.play();
+                    this.innerHTML = "暂停";
+                } else {
+                    player.pause();
+                    this.innerHTML = "播放";
+                }
+            };
+            //切换视频是否静音
+            btns[1].onclick = function () {
+                if(player.muted){
+                    player.muted = false;
+                    this.innerHTML = "静音";
+                } else {
+                    player.muted = true;
+                    this.innerHTML = "播放";
+                }
+            };
+            //切换视频是否循环播放
+            btns[2].onclick = function () {
+                if(player.loop){
+                    player.loop = false;
+                    this.innerHTML = "循环";
+                } else {
+                    player.loop = true;
+                    this.innerHTML = "不循环";
+                }
+            };
+            //重新载入视频
+            btns[3].onclick = function () {
+                player.load();
+                time.innerHTML = 0;
+            };
+
+            //调节音量事件
+            player.onvolumechange = function () {
+                console.log(this.volume);
+            }
+        };
+    </script>
+</head>
+<body>
+    <article>
+        <section>
+            <h1>多媒体视频播放</h1>
+            <div class="video">
+                <div class="video_left">
+                    <video id="player" src="../source/video/MV2.mp4" width="400" height="300"
+                           typeof="video/mp4"
+                    >
+                        该浏览器不支持H5中video属性
+                    </video>
+                </div>
+                <div class="video_right">
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <img src="" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <img src="" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <img src="" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="controls">
+                <button>播放</button>
+                <button>静音</button>
+                <button>循环</button>
+                <button>重新载入视频</button>
+                播放时间：<span id="time"></span>
+                视频总长：<span id="allTime"></span>
+            </div>
+        </section>
+    </article>
+
+</body>
+</html>

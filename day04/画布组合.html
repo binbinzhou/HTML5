@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画布组合</title>
+    <script>
+        window.onload = function () {
+            var one = document.getElementById("one");
+            var context = one.getContext("2d");
+            context.fillStyle = "red";
+            context.fillRect(0,0,200,200);
+
+            //over
+            //context.globalCompositeOperation = "source-over";     //让新添加的图像在最上层，这里本来就是这样，没有必要，后者覆盖前者
+            //context.globalCompositeOperation = "destination-over";  //让原来的图像在最上层
+
+            //in
+            //context.globalCompositeOperation = "source-in"; //取交集部分，source则是新添加的图像
+            context.globalCompositeOperation = "destination-in";
+
+            //out   显示不重叠部分
+
+            //atop  未被重叠部分
+
+
+
+            context.fillStyle = "#ddd";
+            context.fillRect(50,50,200,200);
+
+        }
+    </script>
+</head>
+<body>
+<article>
+    <section>
+        <h1>画布的组合</h1>
+        <figure>
+            <canvas id="one" width="500" height="400">
+                该浏览器支持Canvas
+            </canvas>
+            <figcaption>画布组合</figcaption>
+        </figure>
+    </section>
+</article>
+
+</body>
+</html>
