@@ -107,9 +107,6 @@ nav>div{
     width: 1280px;
     margin:0 auto;
 }
-.ad a{
-    display: block;
-}
 /*大图广告结束*/
 /*中间内容区开始*/
 .wrapper{
@@ -136,6 +133,11 @@ nav>div{
     font-size: 20px;
     padding:0 8px;
 }
+.videos h1>a{
+    float: right;
+    padding-right: 24px;
+    color: #999999;
+}
 .videos ul{
     overflow: hidden;
     padding-left:14px;
@@ -145,12 +147,7 @@ nav>div{
     padding-right: 10px;
     float: left;
 }
-.videos h1>a{
-    float: right;
-    padding-right: 24px;
-    color: #999999;
-}
-
+/*下部分开始*/
 .content{
     overflow: hidden;
 }
@@ -439,7 +436,12 @@ footer .copyright{
 }
 .movies .movies_right ul li>a{
     float: left;
-    padding-right: 10px;
+}
+.movies .movies_right ul li>a.current{
+    border: 1px solid red;
+}
+.movies .movies_right ul li .lis_desc{
+    margin-left: 110px;
 }
 .movies .movies_right ul li span a{
     color: #ffffff;
